@@ -1,0 +1,265 @@
+body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Poppins', sans-serif; /* Default font is Poppins */
+        }
+
+        /* Language Selection Screen */
+        #language-selection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            background: url('background.jpg') no-repeat center center/cover;
+            color: rgb(25, 180, 200);
+            flex-direction: column;
+        }
+
+        #language-selection h2 {
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif; /* Poppins font for the language selection */
+            font-size: 1.8rem; /* Reduced font size */
+        }
+
+        .language-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .language-buttons button {
+            padding: 10px 20px;
+            font-size: 1rem; /* Reduced button font size */
+            border: none;
+            background-color: #ffcc00;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .language-buttons button img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        /* Hover Effect for Buttons */
+        .language-buttons button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        #landing-page, #main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        #landing-page {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            background: url('agriculture.jpg') no-repeat center center/cover;
+            color: white;
+        }
+
+        .landing-content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .landing-content h1 {
+            font-size: 2.5rem; /* Reduced font size */
+            font-weight: normal;
+            text-align: center;
+            font-family: 'Press Start 2P'; /* Press Start 2P for the main heading */
+        }
+
+        .landing-content h1 strong {
+            font-weight: bold;
+            font-size: 3rem; /* Reduced font size */
+        }
+
+        .landing-content p {
+            font-size: 1rem; /* Reduced font size */
+            text-align: center;
+        }
+
+        .landing-content button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 1.1rem; /* Reduced font size */
+            background-color: #ffcc00;
+            border-radius: 10px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .landing-content button:hover {
+            background-color: #e6b800;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #2E8B57;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            flex-direction: column;
+            font-family: 'Poppins', sans-serif; /* Use Poppins for the header */
+        }
+
+        header h1 {
+            font-size: 3.5rem; /* Reduced font size */
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5px;
+            font-family: 'Press Start 2P', cursive; /* Press Start 2P for the main heading */
+        }
+
+        header p {
+            font-size: 1.5rem; /* Reduced font size */
+            text-align: center;
+            margin-top: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            background-color: #2E8B57;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem; /* Reduced font size */
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffcc00;
+            color: black;
+        }
+
+        #google_translate_element {
+            display: none;
+        }
+
+        /* Image Slider */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: 45vh;
+            overflow: hidden;
+            display: none; /* Initially hidden */
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .slider img {
+            width: 100vw;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-nav button {
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 10px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .slider-nav button:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* AI Job Listing Section */
+        #job-listing {
+            background-color: #f0f8ff;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .job-listings {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .job-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-card h3 {
+            font-size: 1.2rem;
+            color: #2E8B57;
+        }
+
+        .job-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .job-card button {
+            background-color: #ffcc00;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .job-card button:hover {
+            background-color: #e6b800;
+        }
