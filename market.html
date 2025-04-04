@@ -1,59 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market - KrishiMitra</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f0f8ff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KrishiMitra - Marketplace</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f9f4;
+      margin: 0;
+      padding: 0;
+    }
 
-        .tabs {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    header {
+      background-color: #2d572c;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
 
-        .tab {
-            flex: 1;
-            text-align: center;
-            padding: 50px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
 
-        .tab:hover {
-            background-color: #e0e0e0;
-        }
+    h2 {
+      color: #2d572c;
+      margin-bottom: 0.5rem;
+    }
 
-        .tab h2 {
-            font-size: 2rem;
-            color: #2E8B57;
-        }
+    p {
+      color: #333;
+      margin-bottom: 1rem;
+    }
 
-        .tab a {
-            text-decoration: none;
-            color: inherit;
-        }
-    </style>
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1rem 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #2d572c;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 0.7rem 1.2rem;
+      background-color: #2d572c;
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.button:hover {
+      background-color: #3c7c3b;
+    }
+  </style>
 </head>
 <body>
-    <div class="tabs">
-        <div class="tab">
-            <a href="rent_out.html"><h2>Rent Out</h2></a>
-        </div>
-        <div class="tab">
-            <a href="rent_in.html"><h2>Rent In</h2></a>
-        </div>
-    </div>
+
+<header>
+  <h1>KrishiMitra Marketplace</h1>
+  <p>Where Farmers Buy, Sell, and Share Resources</p>
+</header>
+
+<div class="container">
+
+  <div class="section">
+    <h2>🌾 Buy & Sell Crops / Handicrafts</h2>
+    <img src="produce_fresh_page-0001.jpg" alt="Fresh produce in a rural market">
+    <p>Post listings to sell your farm produce or handmade items. Explore what others are offering and get fair deals directly from other farmers and artisans.</p>
+    <a href="#" class="button">Go to Listings</a>
+  </div>
+
+  <div class="section">
+    <h2>🚜 Equipment Rental Services</h2>
+    <img src="rentals_page-0001.jpg" alt="Farm equipment available for rent">
+    <a href="services.html#rental" class="button">Explore Rentals</a>
+
+
+    <p>Need a tractor, thresher, or irrigation equipment? Rent shared farm equipment from your local area at affordable rates.</p>
+    <a href="services.html#rental" class="button">Explore Rentals</a>
+  </div>
+
+  <div class="section">
+    <h2>🤝 Farmers’ Connect</h2>
+    <img src="rural talk_page-0001.jpg" alt="Farmers talking and collaborating">
+    <p>Find other farmers near you who are looking to collaborate or trade. Form cooperatives or just share tips and stories.</p>
+    <a href="#" class="button">Join the Community</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 KrishiMitra. Empowering Rural India.</p>
+</footer>
+
 </body>
 </html>
