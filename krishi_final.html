@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiMitra - Empowering Farmers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="krishi_styles.css">
+
+</head>
+<body>
+    <!-- Language Selection Screen -->
+    <div id="language-selection">
+        <h2>Select Your Language</h2>
+        <div class="language-buttons">
+            <button onclick="selectLanguage('en')"><img src="flag_en.png" alt="English">English</button>
+            <button onclick="selectLanguage('hi')"><img src="flag_hi.png" alt="Hindi">हिन्दी</button>
+            <button onclick="selectLanguage('ta')"><img src="flag_ta.png" alt="Tamil">தமிழ்</button>
+            <button onclick="selectLanguage('bn')"><img src="flag_bn.png" alt="Bengali">বাংলা</button>
+            <button onclick="selectLanguage('gu')"><img src="flag_gu.png" alt="Gujarati">ગુજરાતી</button>
+        </div>
+    </div>
+
+    <!-- Landing Page -->
+    <div id="landing-page">
+        <div class="landing-content">
+            <h1>कृषिमित्र | <strong>KrishiMitra</strong> | கிருஷிமித்ரா | কৃষিমিত্র | કૃષિમિત્ર</h1>
+            <p>Empowering Farmers</p><!-- Registration Button -->
+            <button onclick="location.href='index.html'">Register Now</button>
+            <button onclick="enterSite()">Login</button>
+        </div>
+    </div>
+
+    <!-- Main Content after Language Selection -->
+    <div id="main-content">
+        <header style="background: url('yourimage3.jpg') no-repeat center center/cover; color: navy; padding: 70px 35px; text-align: center; background-size: cover;">
+            <h1>KRISHIMITRA</h1>
+            <p>Bridging Technology and Farming</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav>
+            <ul>
+                <li><a href="#services"><i class="fas fa-leaf"></i> Services</a></li>
+                <li><a href="#market"><i class="fas fa-shopping-cart"></i> Market</a></li>
+                <li><a href="#support"><i class="fas fa-phone-alt"></i> Support</a></li>
+                <li><a href="#resources"><i class="fas fa-book"></i> Resources</a></li>
+                <li><a href="#contact"><i class="fas fa-address-book"></i> Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- Image Slider -->
+        <div class="slider-container" id="slider-container">
+            <div class="slider" id="slider">
+                <img src="yourimage1.jpg" alt="Image 1">
+                <img src="yourimage2.jpg" alt="Image 2">
+                <img src="yourimage.jpg" alt="Image 3">
+            </div>
+            <div class="slider-nav">
+                <button onclick="prevSlide()">&#10094;</button>
+                <button onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- AI Job Listings Section -->
+        <!-- AI Job Listings Section -->
+    <div id="job-listing">
+        <h2>AI-Powered Job Listings for Farmers</h2>
+
+        <!-- Skill Selection Menu -->
+        <div class="skill-selection">
+            <label for="skills-dropdown">Choose Your Skill:</label>
+            <select id="skills-dropdown" onchange="updateJobSuggestions()">
+                <option value="" disabled selected>🌱 Select Skill</option>
+                <option value="crop_management">🌾 Crop Management</option>
+                <option value="soil_health">🪴 Soil Health Management</option>
+                <option value="irrigation">💧 Irrigation Techniques</option>
+                <option value="farming_technology">🚜 Farming Technology</option>
+                <option value="organic_farming">🌿 Organic Farming</option>
+            </select>
+        </div>
+
+        <!-- Job Listings Container -->
+        <div class="job-listings" id="job-suggestions">
+        <!-- Job suggestions will be dynamically inserted here -->
+    </div>
+</div>
+
+    </div>
+
+    <script src="krishi_script.js"></script>
+
+</body>
+</html>
