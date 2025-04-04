@@ -210,47 +210,47 @@
         }
 
         /* Image Slider */
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 45vh;
-            overflow: hidden;
-            display: none; /* Initially hidden */
-        }
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    overflow: hidden;
+}
 
-        .slider {
-            display: flex;
-            transition: transform 1s ease-in-out;
-        }
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
 
-        .slider img {
-            width: 100vw;
-            height: 100%;
-            object-fit: cover;
-        }
+.slider img {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .slider-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
 
-        .slider-nav button {
-            background: rgba(0, 0, 0, 0.5);
-            border: none;
-            color: white;
-            font-size: 2rem;
-            padding: 10px;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-        }
+.slider-nav button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
 
-        .slider-nav button:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
+.slider-nav button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
 
         /* AI Job Listing Section */
         #job-listing {
@@ -296,6 +296,20 @@
         .job-card button:hover {
             background-color: #e6b800;
         }
+
+        html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+div.page {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
     </style>
 </head>
 <body>
@@ -325,7 +339,7 @@
 
     <!-- Main Content after Language Selection -->
     <div id="main-content">
-        <header style="background: url('yourimage3.jpg') no-repeat center center/cover; color: navy; padding: 70px 35px; text-align: center; background-size: cover;">
+        <header style="background: url('IMAGES_USED/yourimage3.jpg') no-repeat center center/cover; color: navy; padding: 70px 35px; text-align: center; background-size: cover;">
             <h1>KRISHIMITRA</h1>
             <p>Bridging Technology and Farming</p>
         </header>
@@ -333,26 +347,29 @@
         <!-- Navigation Tabs -->
         <nav>
             <ul>
-                <li><a href="#services"><i class="fas fa-leaf"></i> Services</a></li>
+                <li><a href="services.html">Services</a></li>
+
                 <li><a href="market.html"><i class="fas fa-shopping-cart"></i> Market</a></li>
-                <li><a href="#support"><i class="fas fa-phone-alt"></i> Support</a></li>
+                <li><a href="support.html">Support</a></li>
                 <li><a href="upskills.html"><i class="fas fa-book"></i> Upskills</a></li>
-                <li><a href="#contact"><i class="fas fa-address-book"></i> Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+
             </ul>
         </nav>
 
         <!-- Image Slider -->
-        <div class="slider-container" id="slider-container">
-            <div class="slider" id="slider">
-                <img src="yourimage1.jpg" alt="Image 1">
-                <img src="yourimage2.jpg" alt="Image 2">
-                <img src="yourimage.jpg" alt="Image 3">
-            </div>
-            <div class="slider-nav">
-                <button onclick="prevSlide()">&#10094;</button>
-                <button onclick="nextSlide()">&#10095;</button>
-            </div>
-        </div>
+<div class="slider-container" id="slider-container">
+    <div class="slider" id="slider">
+        <img src="images_used/yourimage1.jpg" alt="Image 1">
+        <img src="images_used/yourimage2.jpg" alt="Image 2">
+        <img src="images_used/yourimage.jpg" alt="Image 3">
+    </div>
+    <div class="slider-nav">
+        <button onclick="prevSlide()">&#10094;</button>
+        <button onclick="nextSlide()">&#10095;</button>
+    </div>
+</div>
 
         <!-- AI Job Listings Section -->
         <div id="job-listing">
@@ -377,7 +394,7 @@
 
     <script>
 
-let currentSlide = 0;
+
 
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
@@ -396,6 +413,8 @@ function selectLanguage(lang) {
     }, 100);
 }
 
+let currentSlide = 0; // Track the current slide
+
 function enterSite() {
     let mainContent = document.getElementById('main-content');
     document.getElementById('landing-page').style.display = 'none';
@@ -411,7 +430,7 @@ function nextSlide() {
     if (currentSlide < slides.length - 1) {
         currentSlide++;
     } else {
-        currentSlide = 0;
+        currentSlide = 0; // Loop back to first slide
     }
     updateSlider();
 }
@@ -421,7 +440,7 @@ function prevSlide() {
     if (currentSlide > 0) {
         currentSlide--;
     } else {
-        currentSlide = slides.length - 1;
+        currentSlide = slides.length - 1; // Loop back to last slide
     }
     updateSlider();
 }
@@ -430,6 +449,43 @@ function updateSlider() {
     const slider = document.getElementById('slider');
     slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
 }
+
+// Auto-slide function
+let autoSlideInterval;
+
+function startAutoSlide() {
+    autoSlideInterval = setInterval(nextSlide, 5000); // Change every 5 seconds
+}
+
+// Start auto-slide when the site loads
+window.onload = function() {
+    startAutoSlide();
+};
+function nextSlide() {
+    clearInterval(autoSlideInterval); // Stop auto-slide on manual interaction
+    const slides = document.querySelectorAll('.slider img');
+    if (currentSlide < slides.length - 1) {
+        currentSlide++;
+    } else {
+        currentSlide = 0;
+    }
+    updateSlider();
+    startAutoSlide(); // Restart auto-slide after manual change
+}
+
+function prevSlide() {
+    clearInterval(autoSlideInterval); // Stop auto-slide on manual interaction
+    const slides = document.querySelectorAll('.slider img');
+    if (currentSlide > 0) {
+        currentSlide--;
+    } else {
+        currentSlide = slides.length - 1;
+    }
+    updateSlider();
+    startAutoSlide(); // Restart auto-slide after manual change
+}
+
+
 
 window.onload = () => {
     if (localStorage.getItem('selectedLanguage')) {
@@ -522,8 +578,38 @@ jobSuggestions.forEach((job) => {
     jobListingsContainer.appendChild(jobCard);
 });
 }
+// Example for a simple tab
+document.querySelector("#tab1").addEventListener("click", function() {
+  // Push a new state for tab 1
+  history.pushState({ page: "tab1" }, "", "#tab1");
+  // Show the content for tab1, hide others
+  showTabContent("tab1");
+});
+
+document.querySelector("#tab2").addEventListener("click", function() {
+  // Push a new state for tab 2
+  history.pushState({ page: "tab2" }, "", "#tab2");
+  // Show the content for tab2, hide others
+  showTabContent("tab2");
+});
+
+// Function to show/hide tab contents
+function showTabContent(tabId) {
+  document.querySelectorAll(".tab-content").forEach(tab => tab.classList.add("hidden"));
+  document.querySelector(`#${tabId}`).classList.remove("hidden");
+}
+
+// This will be used when the user presses the back/forward button
+window.addEventListener("popstate", function(event) {
+  if (event.state) {
+    showTabContent(event.state.page);
+  }
+});
+
 
     </script>
-
+<footer>
+    <p>&copy; 2025 KrishiMitra. Empowering Rural India.</p>
+  </footer>
 </body>
 </html>
