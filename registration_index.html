@@ -1,106 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Farmer Registration Form</title>
-    <link rel="stylesheet" href="registration_styles.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmer Registration Form</title>
+  <link rel="stylesheet" href="registration_styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>🚜 Farmer Registration Form</h2>
 
-    <div class="container">
-      <h2>🚜 Farmer Registration Form</h2>
+    <form id="farmerForm">
+      <label>👤 Full Name</label>
+      <input type="text" placeholder="Enter your full name" required />
 
-      <form id="farmerForm">
-        <label>👤 Full Name</label>
-        <input type="text" placeholder="Enter your full name" required />
+      <label>📅 Date of Birth</label>
+      <input type="date" required />
 
-        <label>📅 Date of Birth</label>
-        <input type="date" required />
+      <label>🆔 Aadhar Number</label>
+      <input type="text" placeholder="Enter Aadhar number" required />
 
-        <label>🆔 Aadhar Number</label>
-        <input type="text" placeholder="Enter Aadhar number" required />
+      <label>👥 Username</label>
+      <input type="text" placeholder="Choose a username" required />
 
-        <label>📞 Phone Number</label>
-        <input type="tel" placeholder="Enter phone number" required />
-
-        <label>📧 Email Address</label>
-        <input type="email" placeholder="Enter email address" required />
-
-        <label>🏡 Address</label>
-        <textarea placeholder="Enter your address"></textarea>
-
-        <label>🌍 Select Language</label>
-        <select>
-          <option>English</option>
-          <option>Hindi</option>
-          <option>Marathi</option>
-          <option>Tamil</option>
-        </select>
-
-        <label>🌱 Select Farming Skill</label>
-        <select id="farmingSkill" onchange="toggleOtherSkill()">
-          <option>🌱 Organic Farming</option>
-          <option>🌾 Crop Cultivation</option>
-          <option>🐄 Livestock Rearing</option>
-          <option>🐟 Aquaculture</option>
-          <option>🍎 Horticulture</option>
-          <option>🌻 Floriculture</option>
-          <option>🚜 Precision Farming</option>
-          <option>🧪 Soil Testing</option>
-          <option>☀️ Solar Farming</option>
-          <option>🐝 Beekeeping</option>
-          <option>🍄 Mushroom Farming</option>
-          <option>🥑 Agroforestry</option>
-          <option>🍷 Viticulture (Grape Farming)</option>
-          <option>🛠 Farm Equipment Handling</option>
-          <option>🚜 Tractor Operation</option>
-          <option>🔬 Agricultural Research</option>
-          <option>📈 Agribusiness Management</option>
-          <option value="other">➕ Other</option>
-        </select>
-
-        <!-- Input field for specifying other skill (Hidden initially) -->
-        <div id="otherSkillContainer" class="hidden">
-          <label>📝 Specify Your Skill</label>
-          <input
-            type="text"
-            id="otherSkillInput"
-            placeholder="Enter your farming skill"
-          />
+      <label for="passwordInput">🔒 Password</label>
+      <div class="password-container">
+        <input
+          type="password"
+          id="passwordInput"
+          placeholder="Enter a password"
+          required
+        />
+        <div class="show-password-container">
+          <input type="checkbox" id="showPassword" />
+          <label for="showPassword"> Show Password</label>
         </div>
+      </div>
 
-        <div class="kyf-container">
-          <input type="checkbox" id="kyf" onclick="toggleKYFOptions()" />
-          <label for="kyf">📜 Join KYF (Know Your Farmer)</label>
-        </div>
+      <label>📞 Phone Number</label>
+      <input type="tel" placeholder="Enter phone number" required />
 
-        <div id="kyfFields" class="hidden">
-          <div class="land-size-container">
-            <label>🌿 Land Size</label>
-            <div class="land-input-group">
-              <input type="number" placeholder="Enter land size" />
-              <select>
-                <option>Acres</option>
-                <option>Hectares</option>
-                <option>Guj</option>
-              </select>
-            </div>
+      <label>📧 Email Address</label>
+      <input type="email" placeholder="Enter email address" required />
+
+      <label>🏡 Address</label>
+      <textarea placeholder="Enter your address"></textarea>
+
+      <label>🌍 Select Language</label>
+      <select>
+        <option>English</option>
+        <option>Hindi</option>
+        <option>Marathi</option>
+        <option>Tamil</option>
+      </select>
+
+      <label>🌱 Select Farming Skill</label>
+      <select id="farmingSkill" onchange="toggleOtherSkill()">
+        <option>🌱 Organic Farming</option>
+        <option>🌾 Crop Cultivation</option>
+        <option>🐄 Livestock Rearing</option>
+        <option>🐟 Aquaculture</option>
+        <option>🍎 Horticulture</option>
+        <option>🌻 Floriculture</option>
+        <option>🚜 Precision Farming</option>
+        <option>🧪 Soil Testing</option>
+        <option>☀️ Solar Farming</option>
+        <option>🐝 Beekeeping</option>
+        <option>🍄 Mushroom Farming</option>
+        <option>🥑 Agroforestry</option>
+        <option>🍷 Viticulture (Grape Farming)</option>
+        <option>🛠 Farm Equipment Handling</option>
+        <option>🚜 Tractor Operation</option>
+        <option>🔬 Agricultural Research</option>
+        <option>📈 Agribusiness Management</option>
+        <option value="other">➕ Other</option>
+      </select>
+
+      <div id="otherSkillContainer" class="hidden">
+        <label>📝 Specify Your Skill</label>
+        <input type="text" id="otherSkillInput" placeholder="Enter your farming skill"/>
+      </div>
+
+      <div class="kyf-container">
+        <input type="checkbox" id="kyf" />
+        <label for="kyf">📜 Join KYF (Know Your Farmer)</label>
+      </div>
+
+      <div id="kyfFields" class="hidden">
+        <div class="land-size-container">
+          <label>🌿 Land Size</label>
+          <div class="land-input-group">
+            <input type="number" placeholder="Enter land size" />
+            <select>
+              <option>Acres</option>
+              <option>Hectares</option>
+              <option>Guj</option>
+            </select>
           </div>
-
-          <label>💰 Annual Income</label>
-          <input type="number" placeholder="Enter annual income" />
-
-          <label class="checkbox-container">
-            <input type="checkbox" />
-            Interested in Government Schemes
-          </label>
         </div>
 
-        <button type="submit">✅ Register Now</button>
-      </form>
-    </div>
+        <label>💰 Annual Income</label>
+        <input type="number" placeholder="Enter annual income" />
 
-    <script src="script.js"></script>
-  </body>
+        <label class="checkbox-container">
+          <input type="checkbox" />
+          Interested in Government Schemes
+        </label>
+      </div>
+
+      <button type="submit">✅ Register Now</button>
+    </form>
+  </div>
+
+  <script src="registration_script.js"></script>
+</body>
 </html>
