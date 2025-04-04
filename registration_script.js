@@ -1,31 +1,33 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Get the KYF checkbox and fields container
     const kyfCheckbox = document.getElementById("kyf");
     const kyfFields = document.getElementById("kyfFields");
-
-    // Function to toggle KYF fields
-    function toggleKYFOptions() {
-        if (kyfCheckbox.checked) {
-            kyfFields.classList.remove("hidden"); // Show fields
-        } else {
-            kyfFields.classList.add("hidden"); // Hide fields
-        }
-    }
-
-    // Event listener for checkbox change
-    kyfCheckbox.addEventListener("change", toggleKYFOptions);
-
-    // Ensure fields remain hidden on page load if unchecked
-    toggleKYFOptions();
-});
-
-function toggleOtherSkill() {
-    let skillSelect = document.getElementById("farmingSkill");
-    let otherSkillContainer = document.getElementById("otherSkillContainer");
-
-    if (skillSelect.value === "other") {
+    const showPasswordCheckbox = document.getElementById("showPassword");
+    const passwordInput = document.getElementById("passwordInput");
+  
+    // Toggle KYF extra fields
+    kyfCheckbox.addEventListener("change", function () {
+      if (kyfCheckbox.checked) {
+        kyfFields.classList.remove("hidden");
+      } else {
+        kyfFields.classList.add("hidden");
+      }
+    });
+  
+    // Toggle password visibility
+    showPasswordCheckbox.addEventListener("change", function () {
+      passwordInput.type = showPasswordCheckbox.checked ? "text" : "password";
+    });
+  
+    // Skill selection toggle
+    const skillSelect = document.getElementById("farmingSkill");
+    const otherSkillContainer = document.getElementById("otherSkillContainer");
+  
+    skillSelect.addEventListener("change", function () {
+      if (skillSelect.value === "other") {
         otherSkillContainer.style.display = "block";
-    } else {
+      } else {
         otherSkillContainer.style.display = "none";
-    }
-}
+      }
+    });
+  });
+  
