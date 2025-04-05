@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KrishiMitra - Weather Forecast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1565614739514-5d7d1ac3ed01?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #2e7d32;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 50px;
+      border-bottom: 4px solid #1b5e20;
+    }
+    header h1 {
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1.5rem;
+    }
+    header p {
+      margin-top: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    main {
+      padding: 40px 20px;
+      flex: 1;
+    }
+    form {
+      background-color: rgba(255, 255, 255, 0.95);
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #81c784;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #388e3c;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      text-transform: uppercase;
+    }
+    button:hover {
+      background-color: #2e7d32;
+    }
+    #forecast {
+      margin-top: 30px;
+      background-color: rgba(232, 245, 233, 0.95);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      border-top: 4px solid #1b5e20;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌾 KRISHIMITRA WEATHER FORECAST</h1>
+    <p>Empowering Bharat, One Forecast at a Time — A KrishiMitra Initiative 🌱</p>
+  </header>
+
+  <main>
+    <form id="weather-form">
+      <label for="location">Enter Your Location:</label>
+      <input type="text" id="location" name="location" placeholder="e.g., Delhi" required />
+      <button type="submit">Get Weather</button>
+    </form>
+
+    <div id="forecast"></div>
+  </main>
+
+  <footer>
+    &copy; 2025 KrishiMitra. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("weather-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const location = document.getElementById("location").value.trim().toLowerCase();
+      let message = "";
+
+      if (location.includes("delhi") || location.includes("rajasthan")) {
+        message = "☀️ It's expected to be hot and dry. Consider drought-resistant crops like millet or pulses.";
+      } else if (location.includes("kerala") || location.includes("assam")) {
+        message = "🌧️ Expect humid and wet weather. Ideal for rice, jute, and spices.";
+      } else if (location.includes("punjab") || location.includes("haryana")) {
+        message = "🌤️ Moderate climate. Wheat, mustard, and sugarcane work well.";
+      } else if (location.includes("jammu") || location.includes("himachal")) {
+        message = "❄️ Cooler zones ahead. Apples, potatoes, and barley could be ideal.";
+      } else {
+        message = "🌾 Weather data unavailable for the region. Choose crops based on soil type and traditional practices.";
+      }
+
+      document.getElementById("forecast").innerHTML = `
+        <h2>Forecast Result</h2>
+        <p>${message}</p>
+      `;
+    });
+  </script>
+</body>
+</html>
