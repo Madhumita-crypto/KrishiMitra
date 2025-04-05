@@ -334,11 +334,52 @@ html {
             }
         }
 
+        /* Auth Buttons */
+        .auth-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .auth-buttons button {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            border: none;
+            background-color: #ffcc00;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: black;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+        }
+
+        .auth-buttons button:hover {
+            transform: translateY(-2px);
+            background-color: #FFC107;
+        }
+
+        /* Responsive design for auth buttons */
+        @media (max-width: 768px) {
+            .auth-buttons {
+                top: 10px;
+                right: 10px;
+            }
+            .auth-buttons button {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Language Selection Screen -->
     <div id="language-selection">
+        <div class="auth-buttons">
+            <button onclick="location.href='login.html'">Login</button>
+            <button onclick="location.href='registration_index.html'">Register</button>
+        </div>
         <h1>Welcome to Krishimitra</h1>
         <h2 class="hindi">कृषिमित्र में आपका स्वागत है</h2>
         <h2 class="languages">कृषिमित्रमध्ये स्वागत आहे | కృషిమిత్రకు స్వాగతం | কৃষিমিত্রে আপনাকে স্বাগতম | கிருஷிமித்ரா வரவேற்கிறது</h2>
