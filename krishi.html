@@ -33,20 +33,20 @@
             font-weight: 700; /* Bold text */
             text-align: center;
             margin-bottom: 15px; /* Adds spacing below the heading */
-            color: #00ff51; /* Changed color */
+            color: darkgreen; /* Changed color */
         }
 
         #language-selection h2.hindi {
             font-size: 36px; /* Slightly smaller font size */
             margin-bottom: 10px; /* Adds spacing below the heading */
-            color: rgb(127, 200, 25);
+            color: white;
         }
 
         #language-selection h2.languages {
             font-size: 18px; /* Smaller font size for other languages */
             margin-bottom: 20px;
             font-family: 'Poppins', sans-serif; /* Poppins font for the language selection */
-            color: black; /* Match the theme color */
+            color: beige; /* Match the theme color */
         }
 
         #language-selection h2.select-language {
@@ -88,61 +88,66 @@
         }
 
         #landing-page, #main-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 
-        #landing-page {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            height: 100vh;
-            background: url('images_used/agriculture.jpg') no-repeat center center;
-            background-size: 100vw 100vh;
-            color: white;
-        }
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
 
-        .landing-content {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 40px;
-            border-radius: 10px;
-        }
+#landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh; /* Ensures full height */
+    width: 100%;
+    background: url('images_used/agriculture.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    box-sizing: border-box;
+}
 
-        .landing-content h1 {
-            font-size: 2.5rem; /* Reduced font size */
-            font-weight: normal;
-            text-align: center;
-            font-family: 'Press Start 2P'; /* Press Start 2P for the main heading */
-        }
+.landing-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 80%; /* Ensures it doesn't overflow */
+    text-align: center;
+}
 
-        .landing-content h1 strong {
-            font-weight: bold;
-            font-size: 3rem; /* Reduced font size */
-        }
+.landing-content h1 {
+    font-size: 2.5rem;
+    font-family: 'Press Start 2P';
+}
 
-        .landing-content p {
-            font-size: 1rem; /* Reduced font size */
-            text-align: center;
-        }
+.landing-content p {
+    font-size: 1rem;
+}
 
-        .landing-content button {
-            margin-top: 20px;
-            padding: 12px 30px;
-            font-size: 1.1rem; /* Reduced font size */
-            background-color: #ffcc00;
-            border-radius: 10px;
-            color: white;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background-color 0.3s;
-        }
+.landing-content button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background-color: #ffcc00;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
 
-        .landing-content button:hover {
-            background-color: #e6b800;
-        }
+.landing-content button:hover {
+    background-color: #e6b800;
+}
+
 
         header {
             display: flex;
@@ -252,50 +257,26 @@
 }
 
 
-        /* AI Job Listing Section */
-        #job-listing {
-            background-color: #f0f8ff;
-            padding: 30px;
-            text-align: center;
-        }
+#about-us {
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+}
 
-        .job-listings {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+#about-us h2 {
+    font-size: 2.5rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
 
-        .job-card {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            width: 250px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+#about-us p {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+}
 
-        .job-card h3 {
-            font-size: 1.2rem;
-            color: #2E8B57;
-        }
-
-        .job-card p {
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .job-card button {
-            background-color: #ffcc00;
-            color: white;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .job-card button:hover {
-            background-color: #e6b800;
-        }
 
         html, body {
   height: 100%;
@@ -309,6 +290,10 @@ div.page {
   height: 100vh;
   scroll-snap-align: start;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
     </style>
 </head>
@@ -352,7 +337,14 @@ div.page {
                 <li><a href="market.html"><i class="fas fa-shopping-cart"></i> Market</a></li>
                 <li><a href="support.html">Support</a></li>
                 <li><a href="upskills.html"><i class="fas fa-book"></i> Upskills</a></li>
+                <li><a href="weather.html">Weather forecast</a></li>
+                <li><a href="Crop advise.html">Crop Advisory</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <a href="#about-us">About Us</a>
+                <li><a href="features.html">Features</a></li>
+
+
+
 
 
             </ul>
@@ -361,36 +353,31 @@ div.page {
         <!-- Image Slider -->
 <div class="slider-container" id="slider-container">
     <div class="slider" id="slider">
-        <img src="images_used/yourimage1.jpg" alt="Image 1">
-        <img src="images_used/yourimage2.jpg" alt="Image 2">
-        <img src="images_used/yourimage.jpg" alt="Image 3">
+        <img src="farmer___page-0001.jpg" alt="Image 1">
+        <img src="mnrega_page-0001.jpg" alt="Image 2">
+        <img src="farming_page-0001.jpg" alt="Image 3">
+        <img src="farmer__mobile_page-0001.jpg" alt="Image 4">
+        <img src="schemes_page-0001.jpg" alt="Image 5">
     </div>
     <div class="slider-nav">
         <button onclick="prevSlide()">&#10094;</button>
         <button onclick="nextSlide()">&#10095;</button>
     </div>
 </div>
-
-        <!-- AI Job Listings Section -->
-        <div id="job-listing">
-            <h2>AI-Powered Job Listings for Farmers</h2>
-        
-            <!-- Dropdown for Selecting Skills -->
-            <label for="skills-dropdown">Choose Your Skill:</label>
-            <select id="skills-dropdown" onchange="updateJobSuggestions()">
-                <option value="" disabled selected>Select Skill</option>
-                <option value="crop_management">Crop Management</option>
-                <option value="soil_health">Soil Health Management</option>
-                <option value="irrigation">Irrigation Techniques</option>
-                <option value="farming_technology">Farming Technology</option>
-                <option value="organic_farming">Organic Farming</option>
-            </select>
-        
-            <div class="job-listings" id="job-suggestions">
-                <!-- Job suggestions will be displayed here -->
-            </div>
-        </div>
+<section id="about-us" style="padding: 50px 20px; background-color: #f8f8f8;">
+    <div style="max-width: 1000px; margin: auto; text-align: center;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 20px; color: #2e7d32;">About KrishiMitra</h2>
+      <p style="font-size: 1.2rem; color: #444;">
+        KrishiMitra is your one-stop solution to bridging technology and farming. 
+        We aim to empower rural communities with access to modern tools, knowledge, and markets—turning traditional farming into a thriving digital journey.
+      </p>
+      <img src="farmers gang.jpg"alt="Image1">
     </div>
+  </section>
+  
+
+
+
 
     <script>
 
@@ -495,89 +482,7 @@ window.onload = () => {
     }
 };
 
-const jobData = {
-crop_management: [
-    {
-        title: "Crop Management Specialist",
-        description: "Assist farmers with crop management using AI-based tools.",
-    },
-    {
-        title: "Field Technician",
-        description: "Monitor and guide the cultivation of crops in rural areas.",
-    },
-],
-soil_health: [
-    {
-        title: "Soil Health Expert",
-        description: "Help farmers improve soil quality using AI-driven diagnostics.",
-    },
-    {
-        title: "Agri-Soil Consultant",
-        description: "Provide consultation for soil treatment and maintenance.",
-    },
-],
-irrigation: [
-    {
-        title: "Irrigation System Planner",
-        description: "Design efficient irrigation systems to improve crop yields.",
-    },
-    {
-        title: "Water Management Expert",
-        description: "Develop sustainable water management techniques for rural farming.",
-    },
-],
-farming_technology: [
-    {
-        title: "Agri-Tech Engineer",
-        description: "Introduce new technologies to streamline farming operations.",
-    },
-    {
-        title: "Farm Automation Specialist",
-        description: "Integrate automation systems to increase farm productivity.",
-    },
-],
-organic_farming: [
-    {
-        title: "Organic Farming Consultant",
-        description: "Advise farmers on organic farming techniques for sustainable practices.",
-    },
-    {
-        title: "Organic Crop Advisor",
-        description: "Help farmers transition to organic farming for better crop health.",
-    },
-],
-};
 
-// Function to update job suggestions based on selected skill
-function updateJobSuggestions() {
-const skill = document.getElementById('skills-dropdown').value;
-const jobSuggestions = jobData[skill] || [];
-
-// Clear previous job listings
-const jobListingsContainer = document.getElementById('job-suggestions');
-jobListingsContainer.innerHTML = '';
-
-// Generate job cards for selected skill
-jobSuggestions.forEach((job) => {
-    const jobCard = document.createElement('div');
-    jobCard.classList.add('job-card');
-
-    const jobTitle = document.createElement('h3');
-    jobTitle.textContent = job.title;
-
-    const jobDesc = document.createElement('p');
-    jobDesc.textContent = job.description;
-
-    const applyButton = document.createElement('button');
-    applyButton.textContent = 'Apply Now';
-
-    jobCard.appendChild(jobTitle);
-    jobCard.appendChild(jobDesc);
-    jobCard.appendChild(applyButton);
-
-    jobListingsContainer.appendChild(jobCard);
-});
-}
 // Example for a simple tab
 document.querySelector("#tab1").addEventListener("click", function() {
   // Push a new state for tab 1
@@ -606,10 +511,9 @@ window.addEventListener("popstate", function(event) {
   }
 });
 
-
-    </script>
+</script>
 <footer>
     <p>&copy; 2025 KrishiMitra. Empowering Rural India.</p>
-  </footer>
+</footer>
 </body>
 </html>
