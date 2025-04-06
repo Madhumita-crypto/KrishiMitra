@@ -192,41 +192,40 @@
         >
           <h3 style="color: #2d572c">Create Your Listing</h3>
           <form onsubmit="submitListing(event)">
-            <label>Crop/Product Name:</label><br />
+            <label>Crop/Product Name:</label>
             <input
               type="text"
               id="cropName"
               required
               style="width: 100%; padding: 8px"
-            /><br /><br />
+            />
 
-            <label>Quantity (e.g. 50 kg, 20 pieces):</label><br />
+            <label>Minimum Quantity (e.g. 50 kg, 20 pieces):</label>
             <input
               type="text"
               id="quantity"
               required
               style="width: 100%; padding: 8px"
-            /><br /><br />
+            />
 
-            <label>Price You're Offering (₹ per unit):</label><br />
+            <label>Price You're Offering (₹ per unit):</label>
             <input
               type="number"
               id="price"
               required
               style="width: 100%; padding: 8px"
-            /><br /><br />
+            />
 
-            <label>Optional Description / Location:</label><br />
+            <label>Optional Description / Location:</label>
             <textarea
               id="description"
               rows="3"
               style="width: 100%; padding: 8px"
-            ></textarea
-            ><br /><br />
+            ></textarea>
 
             <button type="submit" class="button">Post Listing</button>
           </form>
-          <h3 style="color: #2d572c">🧺 Current Listings</h3>
+          <h3 style="color: #2d572c">🧺 My Listings</h3>
           <div id="listingDisplay" style="margin-top: 10px"></div>
         </div>
       </div>
@@ -327,7 +326,7 @@
             (listing, index) => `
           <div class="listing-card">
             <strong>📌 ${listing.name}</strong><br>
-            📦 <strong>Quantity:</strong> ${listing.quantity}<br>
+            📦 <strong>Minimum Quantity:</strong> ${listing.quantity}<br>
             💰 <strong>Price:</strong> ₹${listing.price} per unit<br>
             📝 <strong>Details:</strong> ${
               listing.description || "No description"
