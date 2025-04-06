@@ -70,7 +70,11 @@ KrishiMitra follows a **multi-stream freemium-based model** to ensure both acces
 ## 🛠 Tech Stack
 
 - **Frontend**: HTML, CSS, JavaScript  
-- **Backend**: Node.js, Express.js, MongoDB  
+- **Backend**: Node.js, Express.js, MongoDB 
+***** kindly download required backend dependencies before running
+npm init -y
+npm install express mongoose dotenv bcrypt jsonwebtoken cors
+(run on Backend folder)
 
 ---
 
