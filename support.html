@@ -149,46 +149,9 @@
 <footer>
   <p>&copy; 2025 KrishiMitra. Bharat Ke Kisano Ke Liye.</p>
 </footer>
-
-<script>
-function startSpeechRecognition() {
-    let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-    recognition.lang = "hi-IN";
-    recognition.start();
-
-    recognition.onresult = function(event) {
-        let speechResult = event.results[0][0].transcript.toLowerCase();
-        document.getElementById("recognized-text").innerText = "👉 " + speechResult;
-
-        if (speechResult.includes("kaam kaise milega")) {
-            speak("Aap rozgar wale section me jake apply kar sakte hain. Zaroori documents tayar rakhna!");
-        } else if (speechResult.includes("phone pe bhi kaam milega")) {
-            speak("Bilkul! Aapko SMS ya WhatsApp pe bhi updates milenge.");
-        } else if (speechResult.includes("payment kaise milega")) {
-            speak("Aapka payment seedha bank ya U P I me aayega. Safe hai!");
-        } else {
-            let unsureResponses = [
-                "Mujhe theek se samajh nahi aaya. Kripya dheere boliye.",
-                "Aap kya poochna chahte hain? Main madad karna chahti hoon!",
-                "Aapke sawaal ko thoda aur saaf karein, taki mai sahi jawab de saku."
-            ];
-            speak(unsureResponses[Math.floor(Math.random() * unsureResponses.length)]);
-        }
-    };
-}
-
-function speak(text) {
-    let speech = new SpeechSynthesisUtterance();
-    speech.text = text;
-    speech.lang = "hi-IN";
-    speech.volume = 1;
-    speech.rate = 0.9;
-    speech.pitch = 1.1;
-    speech.voice = speechSynthesis.getVoices().find(voice => voice.lang.includes("hi-IN") || voice.lang.includes("en-IN")) || null;
-    
-    speechSynthesis.speak(speech);
-}
-</script>
-
+<!-- Insert AI Chatbot Icon -->
+<a href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
+  <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
+</a>
 </body>
 </html>
