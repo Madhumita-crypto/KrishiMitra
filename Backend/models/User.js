@@ -1,11 +1,24 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    phone: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    location: String,
-    interest: String
+  fullName: String,
+  dob: Date,
+  aadhar: String,
+  username: String,
+  password: String,
+  phone: String,
+  email: String,
+  address: String,
+  language: String,
+  farmingSkill: String,
+  otherSkill: String,
+  kyf: Boolean,
+  landSize: {
+    size: Number,
+    unit: String
+  },
+  annualIncome: Number,
+  interestedInSchemes: Boolean
 });
 
 module.exports = mongoose.model('User', userSchema);
