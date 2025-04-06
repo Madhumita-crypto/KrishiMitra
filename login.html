@@ -7,9 +7,10 @@
   <link rel="stylesheet" href="login.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
-<body style="background-image: url('login_background.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+<body style="background-image: url('photos\login_background.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
   <div class="login-container">
-    <form class="login-form">
+    <form class="login-form" id="loginForm" onsubmit="handleLogin(event)">
+
       <h2 class="welcome-heading">Welcome Back</h2>
 
       <div class="input-group">
