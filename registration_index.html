@@ -10,24 +10,24 @@
   <div class="container">
     <h2>🚜 Farmer Registration Form</h2>
 
-    <form id="farmerForm">
+    <form id="registerForm">
       <label>👤 Full Name</label>
-      <input type="text" placeholder="Enter your full name" required />
+      <input type="text" id="name" placeholder="Enter your full name" required />
 
       <label>📅 Date of Birth</label>
-      <input type="date" required />
+      <input type="date" id="dob" required />
 
       <label>🆔 Aadhar Number</label>
-      <input type="text" placeholder="Enter Aadhar number" required />
+      <input type="text" id="aadhar" placeholder="Enter Aadhar number" required />
 
       <label>👥 Username</label>
-      <input type="text" placeholder="Choose a username" required />
+      <input type="text" id="username" placeholder="Choose a username" required />
 
       <label for="passwordInput">🔒 Password</label>
       <div class="password-container">
         <input
           type="password"
-          id="passwordInput"
+          id="password"
           placeholder="Enter a password"
           required
         />
@@ -38,16 +38,16 @@
       </div>
 
       <label>📞 Phone Number</label>
-      <input type="tel" placeholder="Enter phone number" required />
+      <input type="tel" id="phone" placeholder="Enter phone number" required />
 
       <label>📧 Email Address</label>
-      <input type="email" placeholder="Enter email address" required />
+      <input type="email" id="email" placeholder="Enter email address" required />
 
       <label>🏡 Address</label>
-      <textarea placeholder="Enter your address"></textarea>
+      <textarea id="address" placeholder="Enter your address"></textarea>
 
       <label>🌍 Select Language</label>
-      <select>
+      <select id="language">
         <option>English</option>
         <option>Hindi</option>
         <option>Marathi</option>
@@ -55,7 +55,7 @@
       </select>
 
       <label>🌱 Select Farming Skill</label>
-      <select id="farmingSkill" onchange="toggleOtherSkill()">
+      <select id="farmingSkill">
         <option>🌱 Organic Farming</option>
         <option>🌾 Crop Cultivation</option>
         <option>🐄 Livestock Rearing</option>
@@ -78,7 +78,7 @@
 
       <div id="otherSkillContainer" class="hidden">
         <label>📝 Specify Your Skill</label>
-        <input type="text" id="otherSkillInput" placeholder="Enter your farming skill"/>
+        <input type="text" id="otherSkill" placeholder="Enter your farming skill" />
       </div>
 
       <div class="kyf-container">
@@ -90,8 +90,8 @@
         <div class="land-size-container">
           <label>🌿 Land Size</label>
           <div class="land-input-group">
-            <input type="number" placeholder="Enter land size" />
-            <select>
+            <input type="number" id="landSize" placeholder="Enter land size" />
+            <select id="landUnit">
               <option>Acres</option>
               <option>Hectares</option>
               <option>Guj</option>
@@ -100,10 +100,10 @@
         </div>
 
         <label>💰 Annual Income</label>
-        <input type="number" placeholder="Enter annual income" />
+        <input type="number" id="income" placeholder="Enter annual income" />
 
         <label class="checkbox-container">
-          <input type="checkbox" />
+          <input type="checkbox" id="govSchemes" />
           Interested in Government Schemes
         </label>
       </div>
@@ -111,9 +111,7 @@
       <button type="submit">✅ Register Now</button>
     </form>
   </div>
-
-  <!-- Updated AI Chatbot Code -->
-  <!-- Remove or replace previous chatbot anchor if present -->
+<!-- AI Chatbot Code -->
   <a id="bot-main" href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
     <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
   </a>
@@ -133,7 +131,6 @@
       }
     }
   </script>
-
   <script src="registration_script.js"></script>
 </body>
 </html>

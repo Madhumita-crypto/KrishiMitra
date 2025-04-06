@@ -171,7 +171,7 @@
       <div class="section">
         <h2>🌾 Buy & Sell Crops / Handicrafts</h2>
         <img
-          src="produce_fresh_page-0001.jpg"
+          src="photos/produce_fresh_page-0001.jpg"
           alt="Fresh produce in a rural market"
         />
         <p>
@@ -233,11 +233,9 @@
       <div class="section">
         <h2>🚜 Equipment Rental Services</h2>
         <img
-          src="rentals_page-0001.jpg"
+          src="photos/rentals_page-0001.jpg"
           alt="Farm equipment available for rent"
         />
-        <a href="services.html#rental" class="button">Explore Rentals</a>
-
         <p>
           Need a tractor, thresher, or irrigation equipment? Rent shared farm
           equipment from your local area at affordable rates.
@@ -248,7 +246,7 @@
       <div class="section">
         <h2>🤝 Farmers’ Connect</h2>
         <img
-          src="rural talk_page-0001.jpg"
+          src="photos/rural talk_page-0001.jpg"
           alt="Farmers talking and collaborating"
         />
         <p>
@@ -372,8 +370,9 @@
         renderListings();
       }
 
-      // Run this on page load
-      window.onload = renderListings;
-    </script>
+        const API_URL = "http://localhost:5000/api/listings";
+        window.onload = renderListings;
+      </script>
+
   </body>
 </html>

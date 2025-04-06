@@ -333,7 +333,6 @@ html {
                 font-size: 2rem; /* Smaller font size for mobile */
             }
         }
-
         /* Auth Buttons */
         .auth-buttons {
             position: absolute;
@@ -370,7 +369,8 @@ html {
                 padding: 6px 12px;
                 font-size: 0.8rem;
             }
-        }
+        }    
+
     </style>
 </head>
 <body>
@@ -385,11 +385,11 @@ html {
         <h2 class="languages">कृषिमित्रमध्ये स्वागत आहे | కృషిమిత్రకు స్వాగతం | কৃষিমিত্রে আপনাকে স্বাগতম | கிருஷிமித்ரா வரவேற்கிறது</h2>
         <h2 class="select-language">Select Your Language</h2>
         <div class="language-buttons">
-            <button onclick="selectLanguage('en')"><img src="english.jpg" alt="English">English</button>
-            <button onclick="selectLanguage('hi')"><img src="hindi.jpg" alt="Hindi">हिन्दी</button>
-            <button onclick="selectLanguage('ta')"><img src="tami1l.jpg" alt="Tamil">தமிழ்</button>
-            <button onclick="selectLanguage('bn')"><img src="bangla.jpg" alt="Bengali">বাংলা</button>
-            <button onclick="selectLanguage('gu')"><img src="gujrati.jpg" alt="Gujarati">ગુજરાતી</button>
+            <button onclick="selectLanguage('en')"><img src="photos/english.jpg" alt="English">English</button>
+            <button onclick="selectLanguage('hi')"><img src="photos/hindi.jpg" alt="Hindi">हिन्दी</button>
+            <button onclick="selectLanguage('ta')"><img src="photos/tami1l.jpg" alt="Tamil">தமிழ்</button>
+            <button onclick="selectLanguage('bn')"><img src="photos/bangla.jpg" alt="Bengali">বাংলা</button>
+            <button onclick="selectLanguage('gu')"><img src="photos/gujrati.jpg" alt="Gujarati">ગુજરાતી</button>
         </div>
     </div>
 
@@ -429,11 +429,11 @@ html {
         <!-- Image Slider -->
 <div class="slider-container" id="slider-container">
     <div class="slider" id="slider">
-        <img src="farmer___page-0001.jpg">
-        <img src="mnrega_page-0001.jpg">
-        <img src="farming_page-0001.jpg">
-        <img src="farmer__mobile_page-0001.jpg">
-        <img src="schemes.jpg">
+        <img src="photos/farmer___page-0001.jpg">
+        <img src="photos/mnrega_page-0001.jpg">
+        <img src="photos/farming_page-0001.jpg">
+        <img src="photos/farmer__mobile_page-0001.jpg">
+        <img src="photos/schemes.jpg">
     </div>
     <div class="slider-nav">
         <button onclick="prevSlide()">&#10094;</button>
@@ -447,7 +447,7 @@ html {
         KrishiMitra is your one-stop solution to bridging technology and farming. 
         We aim to empower rural communities with access to modern tools, knowledge, and markets—turning traditional farming into a thriving digital journey.
       </p>
-      <img src="farmers gang.jpg"alt="Image1">
+      <img src="photos/farmers gang.jpg"alt="Image1">
     </div>
   </section>
   
@@ -547,7 +547,14 @@ function prevSlide() {
     updateSlider();
     startAutoSlide(); // Restart auto-slide after manual change
 }
-
+function toggleBot() {
+    const botContainer = document.getElementById('bot-container');
+    if (botContainer.style.display === 'none' || botContainer.style.display === '') {
+        botContainer.style.display = 'block';
+    } else {
+        botContainer.style.display = 'none';
+    }
+}
 
 
 window.onload = () => {
@@ -593,25 +600,14 @@ window.addEventListener("popstate", function(event) {
 </footer>
 <!-- AI Chatbot Icon -->
 <a href="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" target="_blank" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">
-  <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width:30px; height:30px;">
-</a>
-<div id="bot-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; display: none;">
-    <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" style="width: 100%; height: 100%; border: none;"></iframe>
-</div>
-
-<a id="bot-toggle" onclick="toggleBot()" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); cursor: pointer;">
-    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
-</a>
-
-<script>
-    function toggleBot() {
-        const botContainer = document.getElementById('bot-container');
-        if (botContainer.style.display === 'none' || botContainer.style.display === '') {
-            botContainer.style.display = 'block';
-        } else {
-            botContainer.style.display = 'none';
-        }
-    }
-</script>
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width:30px; height:30px;">
+  </a>
+  <div id="bot-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; display: none;">
+      <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" style="width: 100%; height: 100%; border: none;"></iframe>
+  </div>
+  
+  <a id="bot-toggle" onclick="toggleBot()" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); cursor: pointer;">
+      <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
+  </a>
 </body>
 </html>
