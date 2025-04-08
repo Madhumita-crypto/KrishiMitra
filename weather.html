@@ -1,161 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>KrishiMitra - Weather Forecast</title>
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet"/>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: url('https://images.unsplash.com/photo-1565614739514-5d7d1ac3ed01?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #2e7d32;
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      background-color: #2d572c;
-      color: white;
-      text-align: center;
-      padding: 50px;
-      border-bottom: 4px solid #1b3d1b;
-    }
-    header h1 {
-      margin: 0;
-      font-family: 'Press Start 2P', cursive;
-      font-size: 1.5rem;
-    }
-    header p {
-      margin-top: 10px;
-      font-family: 'Poppins', sans-serif;
-      font-style: italic;
-      font-size: 1.1rem;
-    }
-    main {
-      padding: 40px 20px;
-      flex: 1;
-      background-color: #f4f9f4;
-    }
-    form {
-      background-color: rgba(255, 255, 255, 0.95);
-      max-width: 600px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
-    }
-    label {
-      display: block;
-      margin: 15px 0 5px;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      border: 2px solid #2d572c;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-    button {
-      background-color: #2d572c;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      width: 100%;
-      text-transform: uppercase;
-    }
-    button:hover {
-      background-color: #1b3d1b;
-    }
-
-    #forecast {
-      margin-top: 30px;
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    footer {
-      background-color: #2d572c;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-      border-top: 4px solid #1b3d1b;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>🌾 KRISHIMITRA WEATHER FORECAST</h1>
-    <p>Empowering Bharat, One Forecast at a Time — A KrishiMitra Initiative 🌱</p>
-  </header>
-
-  <main>
-    <form id="weather-form">
-      <label for="location">Enter Your Location:</label>
-      <input type="text" id="location" name="location" placeholder="e.g., Delhi" required />
-      <button type="submit">Get Weather</button>
-    </form>
-
-    <!-- Added forecast div -->
-    <div id="forecast"></div>
-  </main>
-
-  <footer>
-    &copy; 2025 KrishiMitra. All rights reserved.
-  </footer>
-
-  <!-- Updated AI Chatbot Toggle Code -->
-  <div id="bot-container" style="position: fixed; bottom: 20px; right: 20px; width: 300px; height: 400px; background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; display: none;">
-    <iframe src="https://cdn.botpress.cloud/webchat/v2.3/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/27/06/20250327061520-WXWH4E6R.json" style="width: 100%; height: 100%; border: none;"></iframe>
-  </div>
-  <a id="bot-toggle" onclick="toggleBot()" style="position: fixed; bottom: 20px; right: 20px; background: #2d572c; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,0.3); cursor: pointer;">
-    <img src="https://img.icons8.com/ios-filled/50/ffffff/chat.png" alt="Chatbot Icon" style="width: 30px; height: 30px;">
-  </a>
-  <script>
-    document.getElementById("weather-form").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const location = document.getElementById("location").value.trim().toLowerCase();
-      let message = "";
-
-      if (location.includes("delhi") || location.includes("rajasthan")) {
-        message = "☀️ It's expected to be hot and dry. Consider drought-resistant crops like millet or pulses.";
-      } else if (location.includes("kerala") || location.includes("assam")) {
-        message = "🌧️ Expect humid and wet weather. Ideal for rice, jute, and spices.";
-      } else if (location.includes("punjab") || location.includes("haryana")) {
-        message = "🌤️ Moderate climate. Wheat, mustard, and sugarcane work well.";
-      } else if (location.includes("jammu") || location.includes("himachal")) {
-        message = "❄️ Cooler zones ahead. Apples, potatoes, and barley could be ideal.";
-      } else {
-        message = "🌾 Weather data unavailable for the region. Choose crops based on soil type and traditional practices.";
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KrishiMitra - Weather Forecast</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: url("photos/weather.jpg") no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
       }
 
-      document.getElementById("forecast").innerHTML = `
-        <h2>Forecast Result</h2>
-        <p>${message}</p>
-      `;
-    });
-
-    function toggleBot() {
-      const botContainer = document.getElementById('bot-container');
-      if (botContainer.style.display === 'none' || botContainer.style.display === '') {
-        botContainer.style.display = 'block';
-      } else {
-        botContainer.style.display = 'none';
+      .container {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 500px;
+        text-align: center;
       }
-    }
-  </script>
-</body>
+
+      .container h1 {
+        margin-bottom: 20px;
+        color: #2d572c;
+        font-size: 1.8rem;
+      }
+
+      label {
+        display: block;
+        margin: 15px 0 5px;
+        text-align: left;
+        font-weight: 600;
+        color: #2d572c;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input {
+        width: 80%;
+        padding: 10px;
+        border: 2px solid #2d572c;
+        border-radius: 10px;
+        font-size: 1rem;
+        margin-bottom: 15px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+      }
+
+      button {
+        background-color: #2d572c;
+        color: white;
+        padding: 14px;
+        border: none;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background-color: #1b3d1b;
+      }
+
+      #forecast {
+        display: none;
+        margin-top: 25px;
+        padding: 20px;
+        background-color: rgba(240, 255, 240, 0.95);
+        border-radius: 15px;
+        border-left: 5px solid #2d572c;
+        color: #2d572c;
+        font-weight: 500;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 25px;
+        }
+
+        .container h1 {
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🌾 KrishiMitra Weather Forecast</h1>
+      <form id="weather-form">
+        <label for="location">Enter Your Location:</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          placeholder="e.g., Delhi"
+          required
+        />
+        <button type="submit">Get Forecast</button>
+      </form>
+
+      <div id="forecast"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("weather-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const location = document
+            .getElementById("location")
+            .value.trim()
+            .toLowerCase();
+          const resultBox = document.getElementById("forecast");
+          let message = "";
+
+          if (location.includes("delhi") || location.includes("rajasthan")) {
+            message =
+              "☀️ It's expected to be hot and dry. Consider drought-resistant crops like millet or pulses.";
+          } else if (
+            location.includes("kerala") ||
+            location.includes("assam")
+          ) {
+            message =
+              "🌧️ Expect humid and wet weather. Ideal for rice, jute, and spices.";
+          } else if (
+            location.includes("punjab") ||
+            location.includes("haryana")
+          ) {
+            message =
+              "🌤️ Moderate climate. Wheat, mustard, and sugarcane work well.";
+          } else if (
+            location.includes("jammu") ||
+            location.includes("himachal")
+          ) {
+            message =
+              "❄️ Cooler zones ahead. Apples, potatoes, and barley could be ideal.";
+          } else {
+            message =
+              "🌾 Weather data unavailable for the region. Choose crops based on soil type and traditional practices.";
+          }
+
+          resultBox.innerHTML = `<p>${message}</p>`;
+          resultBox.style.display = "block";
+        });
+    </script>
+  </body>
 </html>

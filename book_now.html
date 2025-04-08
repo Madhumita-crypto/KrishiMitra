@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Equipment | Krishimitra</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f5f3;
+      color: #333;
+    }
+
+    header {
+      background-color: #2e562a;
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #2e562a;
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #d9e6d9;
+      padding-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: 0.3s ease all;
+      box-sizing: border-box;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #2e562a;
+      box-shadow: 0 0 4px #a7d3a7;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .submit-btn {
+      margin-top: 25px;
+      background-color: #2e562a;
+      color: white;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #24461f;
+    }
+
+    .form-note {
+      font-size: 13px;
+      color: #777;
+      margin-top: 5px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        margin: 30px 20px;
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🚜 Book Farm Equipment – Krishimitra</h1>
+  </header>
+
+  <div class="container">
+    <h2>Rental Booking Form</h2>
+    <form>
+      <label for="name">👤 Farmer's Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="phone">📞 Contact Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
+      <div class="form-note">We’ll use this number to confirm your booking.</div>
+
+      <label for="location">📍 Village / Town</label>
+      <input type="text" id="location" name="location" placeholder="e.g., Barabanki, UP" required>
+
+      <label for="equipment">🔧 Select Equipment</label>
+      <select id="equipment" name="equipment" required>
+        <option value="">-- Choose Equipment --</option>
+        <option value="tractor">Tractor</option>
+        <option value="thresher">Thresher</option>
+        <option value="irrigation_pump">Irrigation Pump</option>
+        <option value="harvester">Harvester</option>
+        <option value="seed_drill">Seed Drill</option>
+        <option value="plough">Plough</option>
+      </select>
+
+      <label for="date">📅 Rental Start Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="duration">⏱️ Duration (in Days)</label>
+      <input type="number" id="duration" name="duration" placeholder="e.g., 3" min="1" required>
+
+      <label for="notes">📝 Additional Notes (Optional)</label>
+      <textarea id="notes" name="notes" placeholder="Mention any specific timings, locations, or requirements..."></textarea>
+
+      <button class="submit-btn" type="submit">Submit Booking</button>
+    </form>
+  </div>
+
+</body>
+</html>
