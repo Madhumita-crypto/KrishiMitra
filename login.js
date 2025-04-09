@@ -27,10 +27,20 @@ async function handleLogin(event) {
 
     // Store token and redirect
     localStorage.setItem("token", data.token);
-    alert("Login successful!");
-    window.location.href = "krishi.html"; // Or wherever you want to go next
+localStorage.setItem("isLoggedIn", true);
+localStorage.setItem("selectedLanguage", "en"); // Or whatever default
+alert("Login successful!");
+window.location.href = "krishi_1.html";
+
   } catch (err) {
     console.error("Login error:", err);
     alert("Something went wrong. Please try again.");
   }
+}
+
+function logout() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('token');
+    localStorage.removeItem('selectedLanguage');
+    window.location.href = 'krishi_1.html';
 }
