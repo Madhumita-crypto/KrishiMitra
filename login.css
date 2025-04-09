@@ -137,3 +137,20 @@ button:hover {
     background: linear-gradient(145deg, #27ae60, #219a52);
     transform: translateY(-2px);
 }
+
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #000000;
+  }
+  
+  .signup-link a {
+    color: green;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
