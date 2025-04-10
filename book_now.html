@@ -7,7 +7,6 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #f1f5f3;
       color: #333;
@@ -15,51 +14,30 @@
 
     header {
       background-color: #2e562a;
-      color: #fff;
+      color: white;
       padding: 30px 20px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      position: relative;
     }
 
     header h1 {
       margin: 0;
-      font-size: 30px;
-      letter-spacing: 1px;
-    }
-
-    .home-button {
-      position: absolute;
-      top: 50%;
-      left: 20px;
-      transform: translateY(-50%);
-      background-color: #fff;
-      color: #2e562a;
-      padding: 10px 15px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: background 0.3s ease;
-    }
-
-    .home-button:hover {
-      background-color: #d9e6d9;
+      font-size: 28px;
     }
 
     .container {
       max-width: 700px;
-      margin: 50px auto;
+      margin: 40px auto;
       background: #fff;
-      padding: 40px 30px;
+      padding: 35px 30px;
       border-radius: 15px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
     h2 {
       margin-top: 0;
-      color: #2e562a;
       font-size: 24px;
+      color: #2e562a;
       margin-bottom: 20px;
       border-bottom: 2px solid #d9e6d9;
       padding-bottom: 10px;
@@ -78,7 +56,7 @@
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 15px;
-      transition: 0.3s ease all;
+      transition: 0.3s ease;
       box-sizing: border-box;
     }
 
@@ -109,13 +87,52 @@
     .submit-btn:hover {
       background-color: #24461f;
     }
-
-    .form-note {
-      font-size: 13px;
-      color: #777;
-      margin-top: 5px;
+    .equipment-list {
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #e8f5e9;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      border: 1px solid #c5e1a5;
     }
-
+    
+    .equipment-list h2 {
+      color: #2e562a;
+      margin-bottom: 20px;
+      font-size: 22px;
+      border-bottom: 2px solid #aed581;
+      padding-bottom: 8px;
+    }
+    
+    .equipment-item {
+      background: #ffffff;
+      border: 1px solid #d0e6cc;
+      border-left: 5px solid #2e562a;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgba(46, 86, 42, 0.05);
+      transition: transform 0.2s ease;
+    }
+    
+    .equipment-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(46, 86, 42, 0.1);
+    }
+    
+    .equipment-item strong {
+      display: block;
+      font-size: 18px;
+      color: #2e562a;
+      margin-bottom: 6px;
+    }
+    
+    .equipment-item p {
+      margin: 4px 0;
+      font-size: 15px;
+      color: #444;
+    }
+    
     @media screen and (max-width: 768px) {
       .container {
         margin: 30px 20px;
@@ -133,18 +150,18 @@
 
   <div class="container">
     <h2>Rental Booking Form</h2>
-    <form>
-      <label for="name">👤 Farmer's Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
-      <label for="phone">📞 Contact Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
-      <div class="form-note">We’ll use this number to confirm your booking.</div>
+    <form id="booking-form">
+      <label for="name">👤 Farmer's Name</label>
+      <input type="text" name="name" required placeholder="e.g. Ramesh Kumar">
+
+      <label for="phone">📞 Phone Number</label>
+      <input type="tel" name="phone" required placeholder="10-digit number">
 
       <label for="location">📍 Village / Town</label>
-      <input type="text" id="location" name="location" placeholder="e.g., Barabanki, UP" required>
+      <input type="text" name="location" required placeholder="e.g. Barabanki, UP">
 
-      <label for="equipment">🔧 Select Equipment</label>
+      <label for="equipment">🔧 Equipment</label>
       <select id="equipment" name="equipment" required>
         <option value="">-- Choose Equipment --</option>
         <option value="tractor">Tractor</option>
@@ -155,18 +172,66 @@
         <option value="plough">Plough</option>
       </select>
 
-      <label for="date">📅 Rental Start Date</label>
-      <input type="date" id="date" name="date" required>
+      <label for="availableFrom">📅 Available From</label>
+      <input type="date" name="availableFrom" required>
 
       <label for="duration">⏱️ Duration (in Days)</label>
-      <input type="number" id="duration" name="duration" placeholder="e.g., 3" min="1" required>
+      <input type="number" name="duration" required min="1" placeholder="e.g. 3">
 
-      <label for="notes">📝 Additional Notes (Optional)</label>
-      <textarea id="notes" name="notes" placeholder="Mention any specific timings, locations, or requirements..."></textarea>
+      <label for="notes">📝 Additional Notes</label>
+      <textarea name="notes" placeholder="Any specific requirements..."></textarea>
 
       <button class="submit-btn" type="submit">Submit Booking</button>
     </form>
+
+    <div class="equipment-list">
+      <h2>Available Equipment</h2>
+      <div id="equipment-container"></div>
+    </div>
   </div>
+
+  <script>
+    async function loadEquipment() {
+      try {
+        const res = await fetch('http://localhost:5000/api/equipment');
+        const data = await res.json();
+        const container = document.getElementById('equipment-container');
+        container.innerHTML = data.map(item => `
+          <div class="equipment-item">
+            <strong>${item.equipment}</strong>
+            <p><b>Location:</b> ${item.location}</p>
+            <p><b>From:</b> ${new Date(item.availableFrom).toLocaleDateString()}</p>
+            <p><b>Duration:</b> ${item.duration} day(s)</p>
+          </div>
+        `).join('');
+      } catch (err) {
+        console.error("Failed to load equipment:", err);
+        document.getElementById('equipment-container').innerHTML = `<p style="color:red;">Unable to load equipment list.</p>`;
+      }
+    }
+
+    document.getElementById('booking-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      const res = await fetch('http://localhost:5000/api/equipment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (res.ok) {
+        alert('Booking submitted!');
+        this.reset();
+        loadEquipment();
+      } else {
+        alert('Booking failed. Please try again.');
+      }
+    });
+
+    window.onload = loadEquipment;
+  </script>
 
 </body>
 </html>
