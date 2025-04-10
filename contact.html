@@ -18,6 +18,23 @@
       text-align: center;
       padding: 1.5rem;
       font-size: 1.4rem;
+      position: relative;
+    }
+    .home-button {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      background-color: white;
+      color: #2d572c;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .home-button:hover {
+      background-color: #f1f8e9;
     }
     .container {
       max-width: 900px;
@@ -76,6 +93,7 @@
 <body>
 
 <header>
+  <a href="krishi.html" class="home-button">🏠 Home</a>
   <h1>Contact Us (संपर्क करें)</h1>
   <p>Aapki seva mein, hamesha! (आपकी सेवा में, हमेशा!) 📞</p>
 </header>

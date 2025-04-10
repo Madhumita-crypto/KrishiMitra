@@ -80,6 +80,22 @@
         background-color: #1b3d1b;
       }
 
+      .home-button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: inline-block;
+        margin-bottom: 0;
+        padding: 10px 15px;
+        background-color: transparent;
+        color: black;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+      }
+
       #forecast {
         display: none;
         margin-top: 25px;
@@ -105,6 +121,7 @@
   <body>
     <div class="container">
       <h1>🌾 KrishiMitra Weather Forecast</h1>
+      <a href="krishi_1.html" class="home-button">🏠 Home</a>
       <form id="weather-form">
         <label for="location">Enter Your Location:</label>
         <input

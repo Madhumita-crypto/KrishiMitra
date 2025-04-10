@@ -18,12 +18,31 @@
       color: white;
       padding: 50px 20px 30px;
       text-align: center;
+      position: relative;
     }
 
     header h1 {
       margin: 0;
       font-size: 34px;
       font-weight: 700;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #2e562a;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #1e3e1a;
     }
 
     .intro {
@@ -100,6 +119,7 @@
 <body>
 
   <header>
+    <a href="krishi.html" class="home-button">🏠 Home</a>
     <h1>🌾 Join the Farmers’ Connect Community</h1>
   </header>
 

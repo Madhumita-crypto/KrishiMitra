@@ -18,12 +18,31 @@
       color: white;
       text-align: center;
       padding: 50px 20px 30px;
+      position: relative;
     }
 
     header h1 {
       margin: 0;
       font-size: 32px;
       font-weight: 700;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #2e562a;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #1e3e1a;
     }
 
     .container {
@@ -95,6 +114,7 @@
 <body>
 
   <header>
+    <a href="krishi_1.html" class="home-button">🏠 Home</a>
     <h1>👩‍🌾 Women Empowerment Cell</h1>
   </header>
 

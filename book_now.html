@@ -19,12 +19,32 @@
       padding: 30px 20px;
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
     }
 
     header h1 {
       margin: 0;
       font-size: 30px;
       letter-spacing: 1px;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      transform: translateY(-50%);
+      background-color: #fff;
+      color: #2e562a;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+
+    .home-button:hover {
+      background-color: #d9e6d9;
     }
 
     .container {
@@ -107,6 +127,7 @@
 <body>
 
   <header>
+    <a href="krishi_1.html" class="home-button">🏠 Home</a>
     <h1>🚜 Book Farm Equipment – Krishimitra</h1>
   </header>
 
